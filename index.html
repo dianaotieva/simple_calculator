@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>calc</title>
+</head>
+<body>
+    <table id="calcu"> 
+        <tr> 
+            <td colspan="3"> 
+                <input type="text" id="result" pattern="0" readonly> 
+            </td> 
+            <td><input type="button" value="C" onclick="clearInput()"></td> 
+        </tr> 
+  
+        <tr> 
+            <td><input type="button" value="1" onclick="appendToInput('1')"></td> 
+            <td><input type="button" value="2" onclick="appendToInput('2')"></td> 
+            <td><input type="button" value="3"  onclick="appendToInput('3')"></td> 
+            <td><input type="button" value="/" onclick="appendToInput('/')"></td> 
+        </tr> 
+        <tr> 
+            <td><input type="button" value="4" onclick="appendToInput('4')"></td> 
+            <td><input type="button" value="5" onclick="appendToInput('5')"></td> 
+            <td><input type="button" value="6" onclick="appendToInput('6')"></td> 
+            <td><input type="button" value="*" onclick="appendToInput('*')"></td> 
+        </tr> 
+        <tr> 
+            <td><input type="button" value="7" onclick="appendToInput('7')"></td> 
+            <td><input type="button" value="8" onclick="appendToInput('8')"></td> 
+            <td><input type="button" value="9" onclick="appendToInput('9')"></td> 
+            <td><input type="button" value="-" onclick="appendToInput('-')"></td> 
+        </tr> 
+        <tr> 
+            <td><input type="button" value="0"  onclick="appendToInput('0')"></td> 
+            <td><input type="button" value="." onclick="appendToInput('.')"></td> 
+            <td><input type="button" value="=" onclick="calculate()"></td> 
+            <td><input type="button" value="+" onclick="appendToInput('+')"></td> 
+        </tr> 
+    </table> 
+    <script src="script.js"></script>
+</body>
+</html>
