@@ -1,23 +1,26 @@
-// Get the result input element
-const resultField = document.getElementById("result");
-
-// Function to append values to the input
-function appendToInput(value) {
-    resultField.value += value;
+let newOperation = false;
+function display(value){
+    if (newOperation) {
+        document.getElementById("result").value = '';
+        newOperation = false;
+    }
+    document.getElementById("result").value += value;
 }
 
-// Function to calculate the result
-function calculate() {
+function calculate(){
+    let x = document.getElementById("result").value;
     try {
-        const func = new Function('return ' + resultField.value);
-        resultField.value = func();
-    } catch (error) {
-        resultField.value = "Error";
+        let y = eval(x);
+        document.getElementById("result").value = y;
+        newOperation = true;  // Set the flag after a calculation
+    } catch (e) {
+        document.getElementById("result").value = 'Error';
     }
 }
 
-// Function to clear the input
-function clearInput() {
-    resultField.value = "";
+function clearInput(){
+    document.getElementById('result').value = ''
 }
+
+
 
