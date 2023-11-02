@@ -10,9 +10,9 @@
     <table id="calcu"> 
         <tr> 
             <td colspan="3"> 
-                <input type="text" id="result" pattern="0" readonly> 
+                <input type="text" id="result"  readonly> 
             </td> 
-            <td><input type="button" value="C" onclick="clearInput()"></td> 
+            <td><input type="button" value="C" id="clear"></td> 
         </tr> 
   
         <tr> 
@@ -36,7 +36,7 @@
         <tr> 
             <td><input type="button" value="0"  onclick="display('0')"></td> 
             <td><input type="button" value="." onclick="display('.')"></td> 
-            <td><input type="button" value="=" onclick="calculate()"></td> 
+            <td><input type="button" value="=" onclick="calculate()" id="equals"></td> 
             <td><input type="button" value="+" onclick="display('+')"></td> 
         </tr> 
     </table> 
