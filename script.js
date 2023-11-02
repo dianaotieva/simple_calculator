@@ -30,8 +30,11 @@ document.addEventListener('keydown', function(event) {
     const validKeys = "0123456789/*-+.";
     let x = result.value;
     if (validKeys.includes(event.key) || event.key === 'Enter' || event.key === 'Backspace') {
-        event.preventDefault();  // Prevent default action (e.g., scrolling on pressing space)
-        if (event.key === 'Enter') {
+        event.preventDefault();
+        if(newOperation){
+            result.value = '';
+            newOperation = false;
+        }  else  if (event.key === 'Enter') {
             try {
              let y = eval(x);  
                result.value=y;
@@ -41,11 +44,7 @@ document.addEventListener('keydown', function(event) {
             }
         } else if (event.key === 'Backspace') {
             result.value = result.value.slice(0, -1);
-        } else if(newOperation){
-            result.value = '';
-            newOperation = false;
-            
-        }else{
+        } else{
             result.value += event.key;
         }
     }
